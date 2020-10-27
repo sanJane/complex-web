@@ -1,0 +1,168 @@
+* {
+	margin: 0;
+	box-sizing: border-box;
+}
+
+html,
+body {
+	height: 100%;
+	background: red;
+}
+
+body {
+	/* Formatting Model */
+	display: flex;
+}
+
+.clearFix {
+	*zoom: 1;
+}
+
+.clearFix::after {
+	display: table;
+	content: "";
+	clear: both;
+}
+.light{
+	/* Formatting Model */
+	position: absolute;
+	display: none;
+	
+	/* Box Model */
+	border: 1px solid #2399F1;
+	border-radius: 2px;
+	width: 4px;
+	height: 4px;
+	
+	/* Typographic */
+	
+	/* Visual */
+	background: #2399f1;
+}
+/* 最左侧边栏 */
+#app {
+	/* Formatting Model */
+	z-index: 2;
+
+	/* Box Model */
+	width: 100px;
+	height: 100%;
+
+	/* Typographic */
+
+	/* Visual */
+	background: #1d2531;
+}
+
+#app::before {
+	content: "";
+	display: table;
+}
+
+#app .app-icon {
+	/* Formatting Model */
+	position: relative;
+	display: flex;
+	justify-content: center;
+
+	/* Box Model */
+	margin-top: 20px;
+	width: 100%;
+	height: 60px;
+
+	/* Typographic */
+
+	/* Visual */
+}
+
+#app .app-icon:hover .light {
+	/* Formatting Model */
+	top: 28px;
+	left: -2px;
+	display: block;
+}
+
+/* 中间导航栏 */
+#guide {
+	/* Formatting Model */
+
+	/* Box Model */
+	width: 250px;
+	height: 100%;
+
+	/* Typographic */
+
+	/* Visual */
+	background: #222c3c;
+}
+
+#guide .box {
+	/* Formatting Model */
+
+	/* Box Model */
+	margin: 20px 30px;
+}
+
+/* 标题 */
+#guide .title {
+	/* Formatting Model */
+
+	/* Box Model */
+	margin-top: 10px;
+
+	/* Typographic */
+	color: #4c5769;
+	font-size: 12px;
+	/* Visual */
+}
+
+#guide .title p {
+	float: left;
+}
+
+#guide .title img {
+	float: right;
+}
+
+/* 内容 */
+#guide .content {
+	/* Formatting Model */
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	
+	/* Box Model */
+	margin-top: 15px;
+	height: 24px;
+	
+	/* Typographic */
+	color: #b7c0cd;
+	font-size: 14px;
+	
+	/* Visual */
+}
+
+#guide .content:hover .light {
+	/* Formatting Model */
+	top: 10px;
+	left: -32px;
+	display: block;
+}
+#guide .content .num{
+	/* Formatting Model */
+	display: flex;
+	align-items: center;
+	
+	/* Box Model */
+	border-radius: 13px;
+	padding: 7px;
+	height: 24px;
+	
+	/* Typographic */
+	font-size: 9px;
+	color: #fff;
+	
+	/* Visual */
+	background: #2c9ff6;
+}
