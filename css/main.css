@@ -23,22 +23,24 @@ body {
 	content: "";
 	clear: both;
 }
-.light{
+
+.light {
 	/* Formatting Model */
 	position: absolute;
 	display: none;
-	
+
 	/* Box Model */
 	border: 1px solid #2399F1;
 	border-radius: 2px;
 	width: 4px;
 	height: 4px;
-	
+
 	/* Typographic */
-	
+
 	/* Visual */
 	background: #2399f1;
 }
+
 /* 最左侧边栏 */
 #app {
 	/* Formatting Model */
@@ -59,11 +61,13 @@ body {
 	display: table;
 }
 
+/* app图标 */
 #app .app-icon {
 	/* Formatting Model */
 	position: relative;
 	display: flex;
 	justify-content: center;
+	z-index: 2;
 
 	/* Box Model */
 	margin-top: 20px;
@@ -82,6 +86,19 @@ body {
 	display: block;
 }
 
+#app .app-bottom {
+	/* Formatting Model */
+	position: absolute;
+	bottom: 20px;
+	display: flex;
+	justify-content: space-between;
+
+	/* Box Model */
+	margin: 0 26px;
+	width: 48px;
+	height: 16px;
+}
+
 /* 中间导航栏 */
 #guide {
 	/* Formatting Model */
@@ -96,11 +113,37 @@ body {
 	background: #222c3c;
 }
 
+#guide::after {
+	display: table;
+	content: "";
+}
+
 #guide .box {
 	/* Formatting Model */
+	position: relative;
+	height: 100%;
 
 	/* Box Model */
 	margin: 20px 30px;
+}
+
+#guide .box::after {
+	display: table;
+	content: "";
+}
+
+/* 二级菜单样式 */
+#guide .sec-box {
+	border-bottom: 1px solid #2a3547;
+}
+
+#guide .sec-box:nth-of-type(3) {
+	border-bottom: none;
+}
+
+#guide .sec-box::after {
+	display: table;
+	content: "";
 }
 
 /* 标题 */
@@ -131,16 +174,34 @@ body {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	
+
 	/* Box Model */
-	margin-top: 15px;
+	margin-top: 10px;
 	height: 24px;
-	
+
 	/* Typographic */
 	color: #b7c0cd;
 	font-size: 14px;
-	
+
 	/* Visual */
+}
+
+#guide .content:hover {
+	/* Typographic */
+	color: #fff;
+}
+
+/* 含图片内容 */
+#guide .con-img {
+	justify-content: inherit;
+}
+
+#guide .con-img p {
+	margin-left: 10px;
+}
+
+#guide .content:last-of-type {
+	margin-bottom: 15px;
 }
 
 #guide .content:hover .light {
@@ -149,20 +210,95 @@ body {
 	left: -32px;
 	display: block;
 }
-#guide .content .num{
+
+/* 数字标志 */
+#guide .content .num {
 	/* Formatting Model */
 	display: flex;
 	align-items: center;
-	
+
 	/* Box Model */
 	border-radius: 13px;
 	padding: 7px;
 	height: 24px;
-	
+
 	/* Typographic */
 	font-size: 9px;
 	color: #fff;
-	
+
 	/* Visual */
 	background: #2c9ff6;
+}
+
+/* 感叹标志 */
+#guide .content .sigh {
+	/* Formatting Model */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	/* Box Model */
+	border-radius: 13px;
+	padding: 7px;
+	width: 24px;
+	height: 24px;
+
+	/* Typographic */
+	font-size: 9px;
+	color: #fff;
+
+	/* Visual */
+	background: #e14023;
+}
+
+/* 目标栏 */
+#guide #goal {
+	/* Formatting Model */
+	position: absolute;
+	bottom: 40px;
+	
+	/* Box Model */
+	height: 30px;
+}
+
+#guide .goal-title {
+	/* Formatting Model */
+	/* position: relative; */
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	/* Typographic */
+	font-size: 14px;
+	color: #fff;
+}
+
+/* 进度条 */
+#guide #fill-bar {
+	/* Formatting Model */
+	position: absolute;
+	bottom: 0;
+
+	/* Box Model */
+	border-radius: 2px;
+	width: 100%;
+	height: 4px;
+
+	/* Visual */
+	background: #2d3848;
+}
+
+#guide #fill {
+	/* Formatting Model */
+	position: absolute;
+	left: 0;
+	bottom: 0;
+
+	/* Box Model */
+	border-radius: 2px;
+	width: 20%;
+	height: 4px;
+
+	/* Visual */
+	background: #9886e4;
 }
