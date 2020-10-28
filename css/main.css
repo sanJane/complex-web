@@ -44,6 +44,8 @@ body {
 /* 最左侧边栏 */
 #app {
 	/* Formatting Model */
+	flex-shrink: 0;
+	flex-basis: 100px;
 	z-index: 2;
 
 	/* Box Model */
@@ -102,6 +104,8 @@ body {
 /* 中间导航栏 */
 #guide {
 	/* Formatting Model */
+	flex-shrink: 0;
+	flex-basis: 250px;
 
 	/* Box Model */
 	width: 250px;
@@ -110,7 +114,12 @@ body {
 	/* Typographic */
 
 	/* Visual */
+	overflow: scroll;
 	background: #222c3c;
+}
+
+#guide::-webkit-scrollbar {
+	display: none;
 }
 
 #guide::after {
@@ -124,7 +133,12 @@ body {
 	height: 100%;
 
 	/* Box Model */
-	margin: 20px 30px;
+	margin: 0 30px;
+}
+
+#guide .box::before {
+	display: table;
+	content: "";
 }
 
 #guide .box::after {
@@ -151,7 +165,7 @@ body {
 	/* Formatting Model */
 
 	/* Box Model */
-	margin-top: 10px;
+	margin-top: 20px;
 
 	/* Typographic */
 	color: #4c5769;
@@ -255,17 +269,17 @@ body {
 #guide #goal {
 	/* Formatting Model */
 	position: absolute;
-	bottom: 40px;
-	
+	bottom: 20px;
+
 	/* Box Model */
 	height: 30px;
 }
 
-#guide .goal-title {
+#guide #goal .goal-title {
 	/* Formatting Model */
 	/* position: relative; */
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
 	align-items: center;
 
 	/* Typographic */
@@ -301,4 +315,204 @@ body {
 
 	/* Visual */
 	background: #9886e4;
+}
+
+/* app详情栏 */
+#message {
+	/* Formatting Model */
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+
+	/* Box Model */
+	background: #fff;
+
+	overflow: hidden;
+}
+
+/* app顶栏 */
+#message #top-bar {
+	/* Formatting Model */
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-basis: 80px;
+	flex-shrink: 0;
+
+	/* Box Model */
+	border-bottom: 1px solid #e6e9ec;
+	width: 100%;
+	height: 80px;
+
+	/* Visual */
+}
+
+#message #top-bar .title {
+	/* Box Model */
+	margin-left: 30px;
+
+	/* Typographic */
+	font-size: 24px;
+}
+
+#message #top-bar .admin {
+	/* Formatting Model */
+	position: relative;
+
+	/* Box Model */
+	margin-right: 30px;
+	width: 200px;
+	height: 50px;
+}
+
+#message #top-bar .admin_icon {
+	position: absolute;
+	left: 0;
+}
+
+#message #top-bar .drop {
+	position: absolute;
+	top: 20px;
+	right: 0;
+}
+
+#message #top-bar .admin p {
+	margin-left: 66px;
+}
+
+#message #top-bar .name {
+	/* Box Model */
+	margin-top: 5px;
+
+	/* Typographic */
+	font-size: 16px;
+	color: #2399f1;
+}
+
+#message #top-bar .permissions {
+	/* Typographic */
+	font-size: 14px;
+	color: #b5b5b5;
+}
+
+#message .box {
+	/* Formatting Model */
+	display: flex;
+	flex-grow: 1;
+
+	/* Box Model */
+	width: 100%;
+	height: 100%;
+
+	/* Visual */
+	/* background: green; */
+}
+
+#message .chats {
+	/* Formatting Model */
+	display: flex;
+	flex-direction: column;
+	flex-basis: 400px;
+	flex-shrink: 0;
+
+	/* Box Model */
+	border-right: 1px solid #e5e8ee;
+
+	/* Visual */
+	/* background: blue; */
+}
+
+#message .chats .search {
+	/* Formatting Model */
+	flex-basis: 70px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-shrink: 0;
+
+	/* Box Model */
+	border-bottom: 1px solid #e5e8ee;
+	width: 400px;
+	height: 70px;
+
+	/* Visual */
+}
+
+#message .chats .search .input {
+	/* Formatting Model */
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	/* Box Model */
+	border: 1px solid #e5e8ee;
+	border-radius: 4px;
+	padding: 0 15px;
+	width: 340px;
+	height: 36px;
+}
+
+#message .chats .search input {
+	width: 290px;
+	border: none;
+
+	/* Typographic */
+	font-size: 14px;
+
+	/* Virsual */
+	outline: none;
+
+}
+
+#message .chats .search input::placeholder {
+	font-size: 14px;
+	color: #d1d6de;
+}
+
+#message .chats .sec-box {
+	/* Formatting Model */
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+
+	/* Virsual */
+	overflow: scroll;
+}
+
+#message .chats .sec-box::-webkit-scrollbar {
+	display: none;
+}
+
+#message .chats .chat {
+	/* Formatting Model */
+	display: flex;
+	flex-basis: 130px;
+	flex-shrink: 0;
+
+	/* Box Model */
+	border-bottom: 1px solid #e5e8ee;
+	border-left: 3px solid #fff;
+	width: 100%;
+
+	/* Virsual */
+	background: green;
+}
+#message .chats .chat:hover{
+	border-left: 3px solid #2399f1;
+}
+
+#message .chat .thr-box{
+	margin: 15px 25px;
+	margin-left: 22px;
+	width: 350px;
+	height: 100px;
+	
+	background: pink;
+}
+#message .open-chat {
+	/* Formatting Model */
+	flex-grow: 1;
+
+	/* Visual */
+	background: yellow;
 }
